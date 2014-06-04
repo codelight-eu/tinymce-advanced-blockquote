@@ -2,10 +2,10 @@
 /**
  * Plugin Name: TinyMCE Advanced Blockquote
  * Description: Add two blockquote buttons to TinyMCE for better control over styling and wrappers. Based on http://wordpress.stackexchange.com/a/139164/37584
- * Plugin URI:  
- * Version:     
- * Author:      
- * Author URI:  
+ * Plugin URI: http://codelight.eu
+ * Version: 1.0
+ * Author: Codelight 
+ * Author URI: http://codelight.eu
  */
 
 function cc_add_tinymce() {
