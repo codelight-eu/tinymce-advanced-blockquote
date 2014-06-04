@@ -49,8 +49,8 @@
                     $blockquote.addClass('cc-blockquote-text');
 
                     // Check whether or not we already have a .cc-blockquote-border in the selection, in case the style was toggled off using the regular blockquote btn
-                    if (!$borderElement.find('.cc-blockquote-border').length) {
-                       $borderElement = $('<span>&nbsp;</span>').addClass('cc-blockquote-border');
+                    if (!$blockquote.find('.cc-blockquote-border').length) {
+                        $borderElement = $('<span>&nbsp;</span>').addClass('cc-blockquote-border');
                         $blockquote.children().last().append($borderElement);
                     }
                 }
@@ -71,6 +71,8 @@
                 editor.formatter.remove('cc_blockquote_format');
             }
 
+            editor.nodeChanged(); // refresh the button state
+
         };
 
         editor.on('init', function(e) {
@@ -89,7 +91,6 @@
             icon: false,
             onclick: function() {
                 toggleBlockquoteFormat('left');
-                if (!this.active) { this.active(true); }
             },
             onPostRender: function() {
                 var ctrl = this;
@@ -104,7 +105,6 @@
             icon: false,
             onclick: function() {
                 toggleBlockquoteFormat('center');
-                if (!this.active) { this.active(true); }
             },
             onPostRender: function() {
                 var ctrl = this;
@@ -119,7 +119,6 @@
             icon: false,
             onclick: function() {
                 toggleBlockquoteFormat('right');
-                if (!this.active) { this.active(true); }
             },
             onPostRender: function() {
                 var ctrl = this;
